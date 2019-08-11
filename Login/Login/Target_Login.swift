@@ -12,8 +12,8 @@ import UIKit
     @objc func Action_goLoginVC(_ params:[AnyHashable:Any]?)->UIViewController?{
         let loginVC = LoginViewController()
         if var actionParams = params{
-            loginVC.callback = actionParams["login_callback"] as? ((String) -> Void)
-            loginVC.callback?("获取到controller")
+            loginVC.callback = actionParams["login_callback"] as? (([String:Any]) -> Void)
+            print("获取到LoginViewController")
         }
         return loginVC
     }
